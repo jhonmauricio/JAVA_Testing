@@ -8,6 +8,8 @@
         
        <class>org.aguzman.hibernateapp.entity.PersonalQuestions</class>
         <class>org.aguzman.hibernateapp.entity.Auditoria</class>
+        <class>org.aguzman.hibernateapp.entity.ClienteDetalle</class>
+        
 
         <exclude-unlisted-classes>true</exclude-unlisted-classes>
         <properties>

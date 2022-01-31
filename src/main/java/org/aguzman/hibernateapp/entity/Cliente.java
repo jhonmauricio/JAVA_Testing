@@ -2,7 +2,6 @@ package org.aguzman.hibernateapp.entity;
 
 import jakarta.persistence.*;
 
-import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -38,15 +37,27 @@ public class Cliente {
 	   , inverseJoinColumns = @JoinColumn(name = "id_personal")
 	  , uniqueConstraints = @UniqueConstraint(columnNames={"id_personal"}))
 	  private List<PersonalQuestions> personalquestions;
+	  
+	  
+@OneToOne(cascade = CascadeType.ALL, orphanRemoval = true, mappedBy = "cliente")
+private ClienteDetalle detalle;
 
 
 
+public ClienteDetalle getDetalle() {
+    return detalle;
+}
 
+public void setDetalle(ClienteDetalle detalle) {
+    this.detalle = detalle;
+}
 
-//    
-    
+public void addDetalle(ClienteDetalle detalle) {
+    this.detalle = detalle;
+    detalle.setCliente(this);
+}
 
-  public List<PersonalQuestions> getPersonalquestions() {
+public List<PersonalQuestions> getPersonalquestions() {
 		return personalquestions;
 }
 
@@ -159,8 +170,8 @@ public class Cliente {
                 ", nombre='" + nombre + '\'' +
                 ", apellido='" + apellido + '\'' +
                 ", formaPago='" + formaPago+ '\'' +
-              
-                ", direcciones='" + direcciones +  '\'' +
+                 ", detalle='" + detalle+ '\'' +
+              ", direcciones='" + direcciones +  '\'' +
                 ", facturas='" + facturas +  '\'' +
                ", personalquestions='" + personalquestions +  '\'' +
               

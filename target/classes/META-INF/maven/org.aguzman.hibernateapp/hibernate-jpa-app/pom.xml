@@ -11,9 +11,7 @@
     
     <dependencies>
     
-    
-  
-        <dependency>
+    <dependency>
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-core-jakarta</artifactId>
             <version>5.5.7.Final</version>
@@ -23,6 +21,9 @@
             <artifactId>mysql-connector-java</artifactId>
             <version>8.0.26</version>
         </dependency>
+        
+        
+      
         <dependency>
     
     <groupId>org.postgresql</groupId>
@@ -30,6 +31,13 @@
     <scope>runtime</scope>
     <version>42.3.1</version>
 </dependency>
+  
+	<dependency>
+		<groupId>org.projectlombok</groupId>
+		<artifactId>lombok</artifactId>
+		<version>1.18.22</version>
+		<scope>provided</scope>
+	</dependency>
     
 
     </dependencies>
@@ -40,6 +48,6 @@
         <maven.compiler.target>16</maven.compiler.target>
     </properties>
     
-    
+ 
 
 </project>
